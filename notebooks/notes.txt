@@ -1,0 +1,2 @@
+gdf_species.query('species == "Monkey Puzzle Tree"').plot()
+

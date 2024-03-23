@@ -3,8 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+data/released/
 data/processed/
-data/processed
+data/raw/all_lacounty_trees.csv
 
 # C extensions
 *.so

@@ -32,6 +32,11 @@ selenium = "*"
 tabulate = "*"
 pyogrio = "*"
 fiona = "*"
+fuzzywuzzy = "*"
+pip = "*"
+install = "*"
+python-levenshtein = "*"
+contextily = "*"
 
 [dev-packages]
 
