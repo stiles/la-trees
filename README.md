@@ -4,7 +4,7 @@
 
 A spatial data collection of trees planted within municipal right of way in Los Angeles and parts of Los Angeles County, in `geojson` and `Esri Shapefile` formats. (Some larger cities are stored here as `csv` to avoid Github's 100MB file size restriction.)
 
-This repository contains **1.6 million** records of individual trees in **40+** cities.
+This repository contains **1.6 million** records of individual trees in **40+** cities collected in recents years as a hobby project and during my time as a reporter at the *Los Angeles Times*. Tree records in a county the size of Los Angeles become immediately dated and incomplete after their inital collection, so I can't guarantee accuracy or completeness of the data.
 
 Questions? [Email me](mailto:mattstiles@gmail.com).
 
