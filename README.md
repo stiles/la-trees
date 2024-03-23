@@ -4,7 +4,7 @@
 
 A spatial data collection of trees planted within municipal right of way in Los Angeles and parts of Los Angeles County, in `geojson` and `Esri Shapefile` formats. (Some larger cities are stored here as `csv` to avoid Github's 100MB file size restriction.)
 
-This repository contains **1.6 million** records of individual trees in **40+** cities collected in recents years as a hobby project and during my time as a reporter at the *Los Angeles Times*. Tree records in a county the size of Los Angeles become immediately dated and incomplete after their inital collection, so I can't guarantee accuracy or completeness of the data.
+This repository contains **1.6 million** records of individual trees in **40+** cities collected in recents years as a hobby project and during my time as a reporter at the *Los Angeles Times*. Tree records in a county the size of Los Angeles become immediately dated and incomplete after their inital collection, so I can't guarantee the accuracy or completeness of the data.
 
 Questions? [Email me](mailto:mattstiles@gmail.com).
 
@@ -121,3 +121,56 @@ Municipality | **Tree count &darr;** | Population
 ## Sources
 
 Records collected from municipalities via the [California Public Records Act](https://en.wikipedia.org/wiki/California_Public_Records_Act) or official open-data portals. Population via the US Census Bureau.
+
+---
+
+## Use this code
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+- Python 3.10
+- [Jupyter Lab](https://jupyter.org/install)
+
+We recommend using a virtual environment for Python projects. For this repo, [`pipenv`](https://pipenv.pypa.io/en/latest/) is the chosen manager.
+
+### Getting Started
+
+Follow these steps to prepare your environment:
+
+#### 1. **Clone the repo**
+
+First, clone this repository to your local machine and navigate into it using your terminal:
+
+```bash
+git clone <repository-url>
+cd <repository-name>
+```
+
+#### 2. **Create a virtual environment**
+Inside the repository directory, initiate a virtual environment using pipenv:
+
+```
+pipenv shell
+```
+
+This command creates a virtual environment and activates it.
+
+#### 3. Install dependencies
+
+Install the required dependencies, including [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/) and others, with the following command:
+
+```
+pipenv install
+```
+
+### Launching Jupyter Lab
+
+With your environment set up and dependencies installed, you are ready to start working with the notebooks:
+
+
+```
+jupyter lab
+```
+
+This command launches Jupyter Lab in your browser, where you can open, edit and run the notebooks.
