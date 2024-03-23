@@ -120,4 +120,4 @@ Municipality | **Tree count &darr;** | Population
 
 ## Sources
 
-Records collected from municipalities via the [California Public Records Act](https://en.wikipedia.org/wiki/California_Public_Records_Act) or official open-data portals. 
+Records collected from municipalities via the [California Public Records Act](https://en.wikipedia.org/wiki/California_Public_Records_Act) or official open-data portals. Population via the US Census Bureau.
