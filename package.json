@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "mapbox": "^1.0.0-beta10"
+  }
+}
