@@ -1,0 +1,217 @@
+
+@media screen and (max-width: 640px) {
+    .headline {
+        color: #222;
+        font-weight: 600;
+        font-size: 2em;
+        margin: 10px 0px 20px 0px;
+    }
+}
+
+@keyframes colorPulse {
+    0%, 100% {
+        color: #7179bc; /* Start and end with the deep purple color */
+    }
+    50% {
+        color: #222; /* Change to dark gray in the middle of the animation */
+    }
+}
+
+
+/* Custom styles */
+
+.animate {
+    animation: colorPulse 5s ease-in-out 4; /* Run animation for 2 seconds, use ease-in-out timing, repeat 3 times */
+}
+
+.fa-tree-city {
+    color: #7179bc;
+    margin: 0px 20px;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    background: #f4f4f9; 
+    color: #666;
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.header {
+    background-color: #e4e6f3;
+    text-align: center;
+    padding: 20px 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    border-bottom: 1px solid #4b549e;
+}
+
+.footer {
+    padding: 20px 50px;
+    background-color: #e4e6f3;
+    text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #666;
+    font-size: 17px;
+    border-top: 1px solid #4b549e;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.headline {
+    color: #222;
+    font-weight: 600;
+    font-size: 3em;
+    margin: 10px 0px 20px 0px;
+}
+
+.animate {
+    color: #7179bc;
+}
+
+p {
+    line-height: 1.6;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+#map {
+    flex-grow: 1;
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .headline {
+        font-size: 2em;
+    }
+}
+
+@keyframes colorPulse {
+    0%, 100% {
+        color: #7179bc;
+    }
+    50% {
+        color: #222;
+    }
+}
+
+.animate {
+    animation: colorPulse 3s ease-in-out 4;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: center; /* Centers the child elements horizontally */
+    align-items: center; /* Centers the child elements vertically */
+    gap: 10px;  /* Spacing between elements */
+    padding: 10px 50px;  /* Top and bottom padding */
+    background-color: #e4e6f3;  /* Background color matching the header/footer */
+    width: auto;  /* Adjusts automatically based on content width */
+    max-width: 960px;  /* Maximum width to prevent stretching */
+    margin: 0 auto;  /* Centers the container */
+}
+
+.geocoder-container, .location-selector {
+    flex-grow: 1;  /* Allows the elements to expand to fill the available space equally */
+    max-width: 250px;  /* Maximum width for individual controls */
+}
+
+.mapboxgl-ctrl-geocoder  {
+    width: 100%;  /* Makes each control use full available width */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl-geocoder .suggestions {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+}
+
+.location-selector {
+    padding: 7px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
+}
+
+.mapboxgl-ctrl-geocoder--input, .location-selector {
+    width: 100%;  /* Ensures inputs stretch to fill their containers */
+    box-sizing: border-box;  /* Includes padding and border in width and height */
+    font-family: "Source Sans 3", sans-serif;
+    color: #777;
+    
+}
+
+@media screen and (min-width: 640px) {
+    .mapboxgl-ctrl-geocoder--input {
+        height: 36px;
+        padding: 8px 35px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .controls-container {
+        flex-direction: column; /* Stacks the children vertically */
+        gap: 10px; /* Maintains spacing between elements */
+        padding: 10px; /* Reduces padding for smaller screens */
+    }
+
+    .geocoder-container, .location-selector {
+        width: 100%; /* Each control takes full width of the container */
+        max-width: none; /* Overrides any max-width set for larger screens */
+    }
+
+    .headline {
+        font-size: 2em; /* Reduces the font size for the headline */
+        margin: 10px 0; /* Adjusts margin to fit smaller screens */
+    }
+
+    .header {
+        padding: 10px; /* Reduces padding in the header on small screens */
+    }
+
+    .mapboxgl-ctrl-geocoder, .location-selector {
+        width: 100%; /* Ensures full width usage on small screens */
+    }
+
+    .mapboxgl-ctrl-geocoder--input, .location-selector {
+        height: 40px; /* Optional: Adjust height for better touch interaction */
+    }
+
+    .footer {
+        font-size: 15px;
+    }
+}
+
+.legend {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-dot {
+    height: 5px;
+    width: 5px;
+    background-color: #888fc7;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}

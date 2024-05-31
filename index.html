@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <meta name="description" content="Explore the beautiful Jacaranda trees in full bloom across Los Angeles with this interactive map.">
+    <title>Jacaranda trees map Los Angeles | Find the purple trees | Mapa de arboles morados</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Map: Jacaranda trees in LA">
+    <meta property="og:description" content="Explore the beautiful Jacaranda trees in full bloom across Los Angeles with this interactive map.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jacarandamap.com">
+    <meta property="og:image" content="https://www.jacarandamap.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Jacaranda Trees in LA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Map: Jacaranda trees in LA">
+    <meta name="twitter:description" content="Explore the beautiful Jacaranda trees in full bloom across Los Angeles with this interactive map.">
+    <meta name="twitter:url" content="https://www.jacarandamap.com">
+    <meta name="twitter:image" content="https://www.jacarandamap.com/images/twitter-image.jpg">
+
+    <!-- Stylesheets and Fonts -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='style.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+    <link href='style.css' rel='stylesheet' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1 class="headline">Jacarandas are <span class="animate">blooming</span>. Find them.</h1>
+        <p class="into">Tens of thousands of the ephemeral purple trees decorate LA streets each Spring. Any near you?</p>
+        <div class="controls-container">
+            <div id="geocoder" class="geocoder-container"></div>
+            <select id="location-selector" class="location-selector">
+                <option value="">Or, zoom to a place</option>
+            </select>
+        </div>
+    </div>
+    
+    
+    <div id="legend" class="legend">
+        <div class="legend-item">
+            <span class="legend-dot"></span>
+            <span>= one tree</span>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+
+    <div class="footer">
+        © 2024 <a href="https://mattstiles.me">Matt Stiles</a> <i class="fa-solid fa-tree-city"></i> More about this <a href="https://github.com/stiles/la-trees/blob/main/README.md">project</a>.
+    </div>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+   
+    <script src="app.js"></script>
+</body>
+</html>
