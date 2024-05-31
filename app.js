@@ -170,20 +170,32 @@ map.on('load', function () {
     `;
     document.head.appendChild(style);
 
-    // Add the geocoder and other controls
-    const geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-        bbox: LA_BOUNDS,
-        placeholder: 'Find an LA address',
-        proximity: {
-            longitude: -118.2437,
-            latitude: 34.0522
-        },
-        marker: false
-    });
+    // Define desired zoom levels for desktop and mobile
+const desktopZoomLevel = 14;
+const mobileZoomLevel = 16;
 
-    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+// Function to determine the appropriate zoom level based on device type
+function getGeocoderZoomLevel() {
+    return isMobileDevice() ? mobileZoomLevel : desktopZoomLevel;
+}
+
+// Initialize the geocoder with custom zoom levels
+const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    bbox: LA_BOUNDS,
+    placeholder: 'Find an LA address',
+    proximity: {
+        longitude: -118.2437,
+        latitude: 34.0522
+    },
+    marker: false,
+    flyTo: {
+        zoom: getGeocoderZoomLevel()
+    }
+});
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     map.moveLayer('place-city-lg-n', 'jacarandas');
     map.moveLayer('place-city-md-n', 'jacarandas');
