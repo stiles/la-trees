@@ -54,7 +54,7 @@ if (isMobileDevice()) {
 // Initialize the map with conditional settings
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/stiles/clwtdw8mn012c01pp3gg5fbd2',
+    style: 'mapbox://styles/stiles/clwu0wd2x00yq01rb4d02406e',
     center: initialCenter,
     zoom: initialZoom
 });
@@ -82,14 +82,12 @@ window.addEventListener('resize', function() {
     map.setZoom(mobile ? 10 : 11); // Adjust zoom dynamically on resize
 });
 
-
-// 
-
+// When the map loads, add the jacarandas layer and other controls
 map.on('load', function () {
     // Source for jacaranda tileset
     map.addSource('jacarandas', {
         type: 'vector',
-        url: 'mapbox://stiles.baakgm8n'  // Using the Tileset ID
+        url: 'mapbox://stiles.jacaranda_tree_locations_v3'  // Using the new Tileset ID
     });
 
     // Locations layer with zoom conditions
@@ -97,7 +95,7 @@ map.on('load', function () {
         'id': 'jacarandas',
         'type': 'circle',
         'source': 'jacarandas',  // Reference to the source
-        'source-layer': 'lacounty_jacaranda_locations',  // Layer name within the tileset
+        'source-layer': 'jacaranda_tree_locations',  // Layer name within the tileset
         'paint': {
             'circle-radius': [
                 'interpolate', 
@@ -116,8 +114,67 @@ map.on('load', function () {
             'circle-color': '#888fc7',
             'circle-opacity': 0.6
         }
-    });   
-    
+    });
+
+    // Define a variable to hold the current popup reference
+    let currentPopup = null;
+
+    // Function to create and show a popup
+    function showPopup(e) {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const properties = e.features[0].properties;
+        const lat = coordinates[1];
+        const lon = coordinates[0];
+        const streetViewUrl = `http://maps.google.com/maps?q=&layer=c&cbll=${lat},${lon}`;
+        const description = `
+            This Jacaranda tree is in ${properties.name}, a ${properties.type_desc} in LA County's ${properties.region_desc} region.
+            View it <a href="${streetViewUrl}" target="_blank" class="tree-link">here</a>.
+        `;
+
+        // Close existing popup if it exists
+        if (currentPopup) {
+            currentPopup.remove();
+        }
+
+        // Create a new popup and set it as the current popup
+        currentPopup = new mapboxgl.Popup({ closeOnClick: false })
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    }
+
+    // Event listeners for click and touchstart
+    map.on('click', 'jacarandas', function (e) {
+        showPopup(e);
+    });
+
+    map.on('touchstart', 'jacarandas', function (e) {
+        showPopup(e);
+    });
+
+    // Hover effect (optional, for visual feedback)
+    map.on('mouseenter', 'jacarandas', function (e) {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'jacarandas', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+    // Add custom CSS for the link
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .tree-link {
+            color: #4b549e;
+        }
+        .mapboxgl-popup-content {
+            max-width: 200px;
+            white-space: normal;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Add the geocoder and other controls
     const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
@@ -131,14 +188,14 @@ map.on('load', function () {
     });
 
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-    
+
     map.moveLayer('place-city-lg-n', 'jacarandas');
     map.moveLayer('place-city-md-n', 'jacarandas');
 
     map.addControl(new mapboxgl.NavigationControl());
 
     map.getContainer().appendChild(document.getElementById('legend'));
-    
+
     geocoder.on('result', function(ev) {
         if (window.marker) {
             window.marker.remove();
@@ -150,34 +207,5 @@ map.on('load', function () {
         .setLngLat(ev.result.geometry.coordinates)
         .setPopup(new mapboxgl.Popup().setHTML(`<h4>${ev.result.place_name}</h4>`))
         .addTo(map);
-    });
-
-    // Define a variable to hold the current popup reference
-    let currentPopup = null;
-
-    map.on('mouseenter', 'jacarandas', function (e) {
-        const coordinates = e.features[0].geometry.coordinates.slice();
-        const properties = e.features[0].properties;
-        const place = properties.region_desc || 'Unknown place';  // Using 'place' from properties
-        const description = properties.city || `${place}`;  // Default description if none is provided
-
-        // Close existing popup if it exists
-        if (currentPopup) {
-            currentPopup.remove();
-        }
-
-        // Create a new popup and set it as the current popup
-        currentPopup = new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(description)
-            .addTo(map);
-    });
-
-    map.on('mouseleave', 'jacarandas', function () {
-        // Remove the current popup when the mouse leaves the feature
-        if (currentPopup) {
-            currentPopup.remove();
-            currentPopup = null;  // Reset the current popup reference
-        }
     });
 });
