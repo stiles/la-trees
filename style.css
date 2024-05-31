@@ -60,6 +60,23 @@ body, html {
     border-top: 1px solid #4b549e;
 }
 
+.footer a {
+    color: #4b549e;
+    text-decoration: underline;
+}
+
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+    color: #4b549e; /* Same color on hover, focus, and active */
+    text-decoration: underline;
+}
+
+.footer a:visited {
+    color: #4b549e; /* Same color for visited links */
+    text-decoration: underline;
+}
+
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
@@ -197,7 +214,8 @@ p {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
     padding: 10px;
-    font-family: Arial, sans-serif;
+    font-family: "Source Sans 3", sans-serif;
+    color: #777;
     font-size: 12px;
     box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
@@ -215,3 +233,11 @@ p {
     display: inline-block;
     margin-right: 5px;
 }
+
+.intro {
+    font-family: "Source Sans 3", sans-serif;
+    color: #777;
+    font-size: .8em;
+}
+
+
