@@ -177,7 +177,7 @@ p {
     }
 
     .footer {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .headline {
@@ -244,5 +244,5 @@ p {
 
 .fa-tree-city {
     color: #7179bc;
-    margin: 0px 20px;
+    margin: 0px 5px;
 }
