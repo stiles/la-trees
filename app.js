@@ -1,5 +1,4 @@
 // LA County neighborhood locations
-
 fetch('https://stilesdata.com/la/la_county_hoods.geojson')
     .then(response => response.json())
     .then(data => {
@@ -7,9 +6,7 @@ fetch('https://stilesdata.com/la/la_county_hoods.geojson')
         // Sort features alphabetically by the 'name' property within 'properties'
         const sortedFeatures = data.features.sort((a, b) => {
             const nameA = a.properties.name.toUpperCase(); // ignore upper and lowercase
-            const storeCoordinatesA = JSON.stringify(a.geometry.coordinates);
             const nameB = b.properties.name.toUpperCase(); // ignore upper and lowercase
-            const storeCoordinatesB = JSON.stringify(b.geometry.coordinates);
             if (nameA < nameB) {
                 return -1;
             }
@@ -30,7 +27,6 @@ fetch('https://stilesdata.com/la/la_county_hoods.geojson')
     .catch(error => console.error('Error loading the place data:', error));
 
 // MAPBOX MAP
-
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RpbGVzIiwiYSI6ImNsd3Rpc3V2aTAzeXUydm9sMHdoN210b2oifQ.66AJmPYxe2ixku1o7Rwdlg';
 
 // Restrict geocoder to addresses in the area
