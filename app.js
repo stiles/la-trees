@@ -123,8 +123,8 @@ map.on('load', function () {
         const lon = coordinates[0];
         const streetViewUrl = `http://maps.google.com/maps?q=&layer=c&cbll=${lat},${lon}`;
         const description = `
-            This Jacaranda tree is in ${properties.name}, a ${properties.type_desc} in LA County's ${properties.region_desc} region.
-            View it <a href="${streetViewUrl}" target="_blank" class="tree-link">here</a>.
+            This Jacaranda tree is in <b>${properties.name}</b>, a ${properties.type_desc} in LA County's ${properties.region_desc} region.
+            See this block on <a href="${streetViewUrl}" target="_blank" class="tree-link">Google Street View</a>.
         `;
 
         // Close existing popup if it exists
