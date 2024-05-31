@@ -8,6 +8,12 @@ The data are used to create this interactive map showing LA's Jacaranda location
 
 ![](images/og-image.png?raw=true)
 
+The data used in the Jacaranda project is too large to store here, but it's on S3 in GeoJSON format: 
+
+- [LA neighborhoods](https://stilesdata.com/la/la_county_hoods.geojson)
+- [Jacaranda tree locations](https://stilesdata.com/jacarandas/lacounty_jacaranda_locations.geojson)
+- [All LA street tree locations (caution: ~500MB)](https://s3.us-west-1.amazonaws.com/stilesdata.com/jacarandas/la_county_tree_locations.geojson)
+
 Questions? [Email me](mailto:mattstiles@gmail.com).
 
 ## Municpalities collected, by name
