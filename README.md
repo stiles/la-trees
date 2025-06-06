@@ -1,10 +1,18 @@
 # Los Angeles street trees
 
-![](visuals/trees.png?raw=true)
-
 A spatial data collection of trees planted within municipal right of way in Los Angeles and parts of Los Angeles County, in `geojson` and `Esri Shapefile` formats. (Some larger cities are stored here as `csv` to avoid Github's 100MB file size restriction.)
 
 This repository contains **1.6 million** records of individual trees in **40+** cities collected in recents years as a hobby project and during my time as a reporter at the *Los Angeles Times*. Tree records in a county the size of Los Angeles become immediately dated and incomplete after their inital collection, so I can't guarantee the accuracy or completeness of the data.
+
+The data are used to create this interactive map showing LA's Jacaranda locations: [https://jacarandamap.com](https://jacarandamap.com). 
+
+![](images/og-image.png?raw=true)
+
+The data used in the Jacaranda project is too large to store here, but it's on S3 in GeoJSON format: 
+
+- [LA neighborhoods](https://stilesdata.com/la/la_county_hoods.geojson)
+- [Jacaranda tree locations](https://stilesdata.com/jacarandas/lacounty_jacaranda_locations.geojson)
+- [All LA street tree locations (caution: ~500MB)](https://s3.us-west-1.amazonaws.com/stilesdata.com/jacarandas/la_county_tree_locations.geojson)
 
 Questions? [Email me](mailto:mattstiles@gmail.com).
 
