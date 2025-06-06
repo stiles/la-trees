@@ -83,7 +83,7 @@ map.on('load', function () {
     // Source for jacaranda tileset
     map.addSource('jacarandas', {
         type: 'vector',
-        url: 'mapbox://stiles.jacaranda_tree_locations_v3'  // Using the new Tileset ID
+        url: 'mapbox://stiles.d9q03bc5'  // Using the new Tileset ID
     });
 
     // Locations layer with zoom conditions
@@ -91,7 +91,7 @@ map.on('load', function () {
         'id': 'jacarandas',
         'type': 'circle',
         'source': 'jacarandas',  // Reference to the source
-        'source-layer': 'jacaranda_tree_locations',  // Layer name within the tileset
+        'source-layer': 'jacaranda_tree_locations_v4',  // Layer name within the tileset
         'paint': {
             'circle-radius': [
                 'interpolate', 
