@@ -122,55 +122,23 @@ Municipality | **Tree count &darr;** | Population
 
 Records collected from municipalities via the [California Public Records Act](https://en.wikipedia.org/wiki/California_Public_Records_Act) or official open-data portals. Population via the US Census Bureau.
 
----
+## NGA data
 
-## Use this code
+This repository also includes a script to access historical geospatial data from the National Geospatial-Intelligence Agency for Los Angeles, as of 2012. The dataset has 8.9 million trees in and around the city — part of a 130-plus city series that captured 3D trees (and buidings). Each record includes spatial coordinates and associated attributes, such as height in meters. The data is derived from imagery, not a census, so it doesn't include species.
 
-### Prerequisites
+The records were intially hosted on a legacy USGS server that experience timeouts and slower response times. After I inquired about this issue, the agency unfortunately took the data down. I had already downloaded and processed the Los Angeles data, adding features such as neighborhood or city name. It's now stored on S3 as [GeoJSON](https://stilesdata.com/trees/los-angeles/combined_trees_converted.geojson) (1.6GB) and [GeoPackage](https://stilesdata.com/trees/los-angeles/combined_trees.gpkg) (1 GB).
 
-Before you begin, ensure you have the following installed on your system:
-- Python 3.10
-- [Jupyter Lab](https://jupyter.org/install)
+Much of the overall city series (including the buildings features for each) is also now [stored](https://www.arcgis.com/apps/mapviewer/index.html?url=https://services.arcgis.com/QCty4ZXRXx9qyVVL/ArcGIS/rest/services/NGA_Historic_3D_Buildings_And_Trees_DatasetCatalog/FeatureServer&source=sd) by an Esri employee working on [fascinating 3D scenes](https://www.arcgis.com/home/webscene/viewer.html?webscene=5a4cf99d91d542fdbbef773135d1da3b).
 
-We recommend using a virtual environment for Python projects. For this repo, [`pipenv`](https://pipenv.pypa.io/en/latest/) is the chosen manager.
-
-### Getting Started
-
-Follow these steps to prepare your environment:
-
-#### 1. **Clone the repo**
-
-First, clone this repository to your local machine and navigate into it using your terminal:
-
-```bash
-git clone <repository-url>
-cd <repository-name>
-```
-
-#### 2. **Create a virtual environment**
-Inside the repository directory, initiate a virtual environment using pipenv:
-
-```
-pipenv shell
-```
-
-This command creates a virtual environment and activates it.
-
-#### 3. Install dependencies
-
-Install the required dependencies, including [Pandas](https://pandas.pydata.org/), [Geopandas](https://geopandas.org/en/stable/) and others, with the following command:
-
-```
-pipenv install
-```
-
-### Launching Jupyter Lab
-
-With your environment set up and dependencies installed, you are ready to start working with the notebooks:
+## Treekeeper
 
 
-```
-jupyter lab
-```
 
-This command launches Jupyter Lab in your browser, where you can open, edit and run the notebooks.
+## Etc.
+
+Numerous cities in LA County have store their tree inventories in Esri services. 
+
+- [Beverly Hills](https://gis.beverlyhills.org/arcgis/rest/services/OD/OpenData_BeverlyHillsGeoHub/FeatureServer/1)
+- [Los Angeles](https://maps.lacity.org/arcgis/rest/services/Mapping/UFDTreeInventory/MapServer/1)
+- [Pasadena](https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Street_ROW_Trees/FeatureServer/0/)
+- [Santa Monica](https://gis.santamonica.gov/server/rest/services/Trees/FeatureServer/0/)

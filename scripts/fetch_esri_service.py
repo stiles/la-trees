@@ -10,7 +10,7 @@ has_next_page = True
 all_features_list = []
 
 # Base URL for the Esri service
-base_url = "https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Street_ROW_Trees/FeatureServer/0/query?outFields=*&where=1%3D1&f=pgeojson&resultOffset={}&resultRecordCount={}"
+base_url = "https://services.arcgis.com/QCty4ZXRXx9qyVVL/ArcGIS/rest/services/NGA_Historic_3D_Buildings_And_Trees_DatasetCatalog/FeatureServer/0/query?outFields=*&where=1%3D1&f=pgeojson&resultOffset={}&resultRecordCount={}"
 
 while has_next_page:
     # Construct the URL with the current offset
@@ -19,11 +19,13 @@ while has_next_page:
     # Send a request
     response = requests.get(url)
     data = response.json()
+    # print(data)
 
     # Check if the response contains features
     if "features" in data:
         # Convert the response to a GeoDataFrame
         features_gdf = gpd.GeoDataFrame.from_features(data["features"], crs="EPSG:4326")
+        # print(features_gdf)
 
         # Append the current page of features to the list
         all_features_list.append(features_gdf)
@@ -47,5 +49,5 @@ else:
 all_features_df.reset_index(drop=True, inplace=True)
 all_features_df.crs = "EPSG:4326"
 
-# Display the dataframe
-all_features_df.head()
+
+print(all_features_df.head())
