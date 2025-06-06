@@ -140,11 +140,11 @@ Much of the overall city series (including the buildings features for each) is a
 
 ## Treekeeper
 
-Los Angeles uses [TreeKeeper](https://www.davey.com/consulting/urban-forestry-consulting/treekeeper/) software to manage its street tree inventory, containing over 920,000 individual tree records with locations and species (`tree_common`) information. The repository includes a Python script (`scripts/fetch_la_treekeeper.py`) that downloads this dataset directly from the city's WFS service using the `streetsla_UFDSpeciesLabel` layer, which contains both geographic coordinates and tree species data in a single endpoint.
-
-Download from S3: [Shapefile](https://stilesdata.com/trees/los-angeles/la_street_trees_shp.zip), [GeoJSON](https://stilesdata.com/trees/los-angeles/la_street_trees_latlon.geojson), [GDB](la_street_trees_gdb.zip).
+The City of Los Angeles uses [TreeKeeper](https://www.davey.com/consulting/urban-forestry-consulting/treekeeper/) software to manage its street tree inventory, containing over 920,000 individual tree records with locations and species (`tree_common`) information. The repository includes a Python script (`scripts/fetch_la_treekeeper.py`) that downloads this dataset directly from the city's WFS service using the `streetsla_UFDSpeciesLabel` layer, which contains both geographic coordinates and tree species data in a single endpoint.
 
 The script downloads data in 5,000-feature chunks, transforms coordinates from California State Plane Zone V to standard latitude/longitude and then exports the results to multiple formats including GeoJSON, zipped Shapefile and zipped File Geodatabase. All the files are uploaded to S3. This method bypasses the gnarly authentication and rate-limiting issues when dealing with TreeKeeper's internal APIs.
+
+Download from S3 (current as of June 6, 2025): [Shapefile](https://stilesdata.com/trees/los-angeles/la_street_trees_shp.zip), [GeoJSON](https://stilesdata.com/trees/los-angeles/la_street_trees_latlon.geojson), [GDB](la_street_trees_gdb.zip).
 
 ## Etc.
 
