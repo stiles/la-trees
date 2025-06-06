@@ -140,13 +140,16 @@ Much of the overall city series (including the buildings features for each) is a
 
 ## Treekeeper
 
+Los Angeles uses [TreeKeeper](https://www.davey.com/consulting/urban-forestry-consulting/treekeeper/) software to manage its street tree inventory, containing over 920,000 individual tree records with locations and species (`tree_common`) information. The repository includes a Python script (`scripts/fetch_la_treekeeper.py`) that downloads this dataset directly from the city's WFS service using the `streetsla_UFDSpeciesLabel` layer, which contains both geographic coordinates and tree species data in a single endpoint.
 
+Download from S3: [Shapefile](https://stilesdata.com/trees/los-angeles/la_street_trees_shp.zip), [GeoJSON](https://stilesdata.com/trees/los-angeles/la_street_trees_latlon.geojson), [GDB](la_street_trees_gdb.zip).
+
+The script downloads data in 5,000-feature chunks, transforms coordinates from California State Plane Zone V to standard latitude/longitude and then exports the results to multiple formats including GeoJSON, zipped Shapefile and zipped File Geodatabase. All the files are uploaded to S3. This method bypasses the gnarly authentication and rate-limiting issues when dealing with TreeKeeper's internal APIs.
 
 ## Etc.
 
-Numerous cities in LA County have store their tree inventories in Esri services. 
+Numerous other cities in LA County have store their tree inventories in Esri services. A sampling:  
 
 - [Beverly Hills](https://gis.beverlyhills.org/arcgis/rest/services/OD/OpenData_BeverlyHillsGeoHub/FeatureServer/1)
-- [Los Angeles](https://maps.lacity.org/arcgis/rest/services/Mapping/UFDTreeInventory/MapServer/1)
 - [Pasadena](https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Street_ROW_Trees/FeatureServer/0/)
 - [Santa Monica](https://gis.santamonica.gov/server/rest/services/Trees/FeatureServer/0/)

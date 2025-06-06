@@ -11,6 +11,7 @@ data/raw/cities/los-angeles-city/la_street_trees.geojson
 data/raw/cities/los-angeles-city/la_street_trees_detailed.geojson
 data/raw/cities/los-angeles-city/la_street_trees_detailed_shp.zip
 data/raw/cities/los-angeles-city/la_street_trees_detailed_gdb.zip
+data/raw/
 
 # C extensions
 *.so
