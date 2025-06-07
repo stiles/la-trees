@@ -1,0 +1,3 @@
+Warning 6: Normalized/laundered field name: 'last_changed_by' to 'last_chang'
+Warning 6: Normalized/laundered field name: 'coordinates' to 'coordinate'
+Warning 1: One or several characters couldn't be converted correctly from UTF-8 to ISO-8859-1.  This warning will not be emitted anymore.

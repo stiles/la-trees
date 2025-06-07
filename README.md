@@ -153,3 +153,10 @@ Numerous other cities in LA County have store their tree inventories in Esri ser
 - [Beverly Hills](https://gis.beverlyhills.org/arcgis/rest/services/OD/OpenData_BeverlyHillsGeoHub/FeatureServer/1)
 - [Pasadena](https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Street_ROW_Trees/FeatureServer/0/)
 - [Santa Monica](https://gis.santamonica.gov/server/rest/services/Trees/FeatureServer/0/)
+- [Long Beach](https://data.longbeach.gov/explore/dataset/tree-inventory/table/?flg=en-us&sort=species)
+- [Unincorportated LA County](https://lacounty.maps.arcgis.com/home/item.html?id=b61715f22a944b27baa8a53d0621098e): 
+
+And researchers have posted other potentially fruitful repos:
+
+- US Department of Agriculture: Raw urban street tree [inventory data](https://www.fs.usda.gov/rds/archive/Catalog/RDS-2017-0010) for 49 California cities
+- Urban Forest Ecosystems Institute, Cal Poly: California [urban forest inventory](https://lookerstudio.google.com/reporting/880d448d-de26-48d3-b563-0c6317e456e4/page/jWHKB)

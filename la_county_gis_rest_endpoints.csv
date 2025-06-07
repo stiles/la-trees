@@ -1,0 +1,5 @@
+City,REST URL
+Beverly Hills,https://gis.beverlyhills.org/arcgis/rest/services
+Carson,https://gis.carson.org/arcgis/rest/services
+Long Beach,https://gis.longbeach.gov/server/rest/services
+Santa Monica,https://gis.santamonica.gov/server/rest/services
