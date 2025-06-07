@@ -41,7 +41,7 @@ print(f"This layer contains street tree locations and species data directly from
 print("No API scraping required - all data available via WFS")
 print("=" * 50)
 
-# --- STEP 1: FETCH WFS DATA ---
+# --- FETCH WFS DATA ---
 print("\n--- Fetching Street Trees with Species Data ---")
 all_features = []
 
@@ -113,7 +113,7 @@ if not all_features:
             json.dump(raw_geojson, f)
         print(f"✅ Saved raw WFS data → {FULL_GEOJSON_PATH}")
 
-# --- STEP 2: COORDINATE TRANSFORMATION ---
+# --- COORDINATE TRANSFORMATION ---
 print(f"\n--- Converting Coordinates to Lat/Lon ---")
 print(f"Source: California State Plane Zone V (EPSG:2229)")
 print(f"Target: WGS84 Geographic (EPSG:4326)")
@@ -158,7 +158,7 @@ if all_features:
         json.dump(final_geojson, f)
     print(f"✅ Saved converted data → {CONVERTED_GEOJSON_PATH}")
 
-    # --- STEP 3: ANALYZE DATASET ---
+    # --- ANALYZE DATASET ---
     print(f"\n--- Dataset Analysis ---")
     print(f"Total street trees: {len(converted_features):,}")
     
@@ -183,7 +183,7 @@ if all_features:
     print(f"  Vacant sites: {vacant_count:,}")
     print(f"  Stumps: {stump_count:,}")
 
-    # --- STEP 4: EXPORT TO MULTIPLE FORMATS ---
+    # --- EXPORT TO MULTIPLE FORMATS ---
     print(f"\n--- Exporting to Multiple Formats ---")
     
     try:
@@ -238,7 +238,7 @@ if all_features:
         finally:
             shutil.rmtree(temp_gdb_dir, ignore_errors=True)
 
-        # --- STEP 5: S3 UPLOAD ---
+        # --- S3 UPLOAD ---
         if files_to_upload and S3_PROFILE_NAME:
             print(f"\n--- Uploading {len(files_to_upload)} file(s) to S3 ---")
             try:
