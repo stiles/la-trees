@@ -1,0 +1,60 @@
+# Known tree data service endpoints for LA County municipalities
+
+primary:
+  la_city:
+    name: "Los Angeles City"
+    type: "treekeeper_wfs"
+    url: "https://geola.daveytreekeeper.com/geoserver/Treekeeper/ows"
+    layer: "Treekeeper:streetsla_UFDSpeciesLabel"
+    update_frequency: "daily"
+    record_count: 920000
+    last_updated: null
+    
+live_services:
+  beverly_hills:
+    name: "Beverly Hills"
+    type: "esri_feature_service"
+    url: "https://opendata-hub.beverlyhills.org/datasets/fdf9005441a947a482175f7e5e0f3762_1"
+    update_frequency: "weekly"
+    record_count: 29000
+    last_updated: null
+    
+  pasadena:
+    name: "Pasadena"
+    type: "esri_feature_service"
+    url: "https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Street_ROW_Trees/FeatureServer/0/"
+    update_frequency: "weekly"
+    record_count: 71000
+    last_updated: null
+    
+  santa_monica:
+    name: "Santa Monica"
+    type: "esri_feature_service"
+    url: "https://gis.santamonica.gov/server/rest/services/Trees/FeatureServer/0/"
+    update_frequency: "weekly"
+    record_count: 32000
+    last_updated: null
+    
+  long_beach:
+    name: "Long Beach"
+    type: "open_data_portal"
+    url: "https://data.longbeach.gov/explore/dataset/tree-inventory/table/?flg=en-us&sort=species"
+    update_frequency: "monthly"
+    record_count: 140000
+    last_updated: null
+    
+  la_county:
+    name: "Unincorporated LA County"
+    type: "esri_feature_service"
+    url: "https://lacounty.maps.arcgis.com/home/item.html?id=b61715f22a944b27baa8a53d0621098e"
+    update_frequency: "monthly"
+    record_count: 99000
+    last_updated: null
+
+historical:
+  nga:
+    name: "NGA Historical (2012)"
+    type: "static"
+    url: "https://stilesdata.com/trees/los-angeles/combined_trees_converted.geojson"
+    record_count: 8900000
+    last_updated: "2012-01-01"

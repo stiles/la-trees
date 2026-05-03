@@ -1,0 +1,66 @@
+# Collection and processing settings
+
+collection:
+  chunk_size: 5000
+  timeout: 120
+  max_retries: 3
+  retry_delay: 5
+  
+  # Rate limiting
+  requests_per_minute: 60
+  concurrent_requests: 3
+
+processing:
+  # Coordinate systems
+  source_crs: "EPSG:2229"  # California State Plane Zone V
+  target_crs: "EPSG:4326"  # WGS84
+  
+  # Quality thresholds
+  min_coordinate_precision: 6
+  max_duplicate_distance_meters: 1
+  required_fields: ["geometry", "tree_common"]
+  
+validation:
+  # Species validation
+  unknown_species_threshold: 0.1  # Max 10% unknown species
+  
+  # Coordinate validation
+  la_county_bounds:
+    min_lat: 33.7
+    max_lat: 34.8
+    min_lon: -118.9
+    max_lon: -117.6
+
+storage:
+  # Local storage paths
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/current"
+  archive_dir: "data/archives"
+  
+  # S3 configuration
+  s3_bucket: "stilesdata.com"
+  s3_prefix: "trees/los-angeles/"
+  s3_profile: "haekeo"
+  
+  # Export formats
+  export_formats:
+    - geojson
+    - shapefile_zip
+    - geopackage
+    - parquet
+
+monitoring:
+  # Freshness alerts
+  max_age_hours:
+    daily: 25    # LA City data
+    weekly: 168  # Weekly services
+    monthly: 744 # Monthly services
+  
+  # Change detection
+  min_change_threshold: 0.01  # 1% change to trigger update
+  
+alerts:
+  # Notification settings
+  email_enabled: false
+  webhook_url: null
+  slack_channel: null

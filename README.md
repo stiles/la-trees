@@ -95,11 +95,11 @@ Download from S3 (current as of June 6, 2025): [Shapefile](https://stilesdata.co
 
 Numerous other cities in LA County store their tree inventories in Esri services, including:
 
-- [Beverly Hills](https://gis.beverlyhills.org/arcgis/rest/services/OD/OpenData_BeverlyHillsGeoHub/FeatureServer/1)
+- [Beverly Hills](https://opendata-hub.beverlyhills.org/datasets/fdf9005441a947a482175f7e5e0f3762_1/about)
 - [Pasadena](https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Street_ROW_Trees/FeatureServer/0/)
 - [Santa Monica](https://gis.santamonica.gov/server/rest/services/Trees/FeatureServer/0/)
 - [Long Beach](https://data.longbeach.gov/explore/dataset/tree-inventory/table/?flg=en-us&sort=species)
-- [Unincorportated LA County](https://lacounty.maps.arcgis.com/home/item.html?id=b61715f22a944b27baa8a53d0621098e): 
+- [Unincorportated LA County](https://lacounty.maps.arcgis.com/home/item.html?id=b61715f22a944b27baa8a53d0621098e)
 
 And researchers have posted other potentially fruitful repos:
 
