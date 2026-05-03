@@ -27,6 +27,7 @@ fetch('https://stilesdata.com/la/la_county_hoods.geojson')
     .catch(error => console.error('Error loading the place data:', error));
 
 // MAPBOX MAP
+// Note: This is a public token with URL restrictions - safe for client-side use
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RpbGVzIiwiYSI6ImNsd3Rpc3V2aTAzeXUydm9sMHdoN210b2oifQ.66AJmPYxe2ixku1o7Rwdlg';
 
 // Restrict geocoder to addresses in the area
