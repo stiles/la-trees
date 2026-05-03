@@ -171,7 +171,19 @@ map.on('load', function () {
     `;
     document.head.appendChild(style);
 
-    // Define desired zoom levels for desktop and mobile
+    // Move place labels above jacarandas layer
+    map.moveLayer('place-city-lg-n', 'jacarandas');
+    map.moveLayer('place-city-md-n', 'jacarandas');
+    map.moveLayer('place-suburb', 'jacarandas');
+    map.moveLayer('place-town', 'jacarandas');
+    map.moveLayer('place-village', 'jacarandas');
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    map.getContainer().appendChild(document.getElementById('legend'));
+});
+
+// Define desired zoom levels for desktop and mobile
 const desktopZoomLevel = 14;
 const mobileZoomLevel = 16;
 
@@ -198,26 +210,15 @@ const geocoder = new MapboxGeocoder({
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
-    map.moveLayer('place-city-lg-n', 'jacarandas');
-    map.moveLayer('place-city-md-n', 'jacarandas');
-    map.moveLayer('place-suburb', 'jacarandas');
-    map.moveLayer('place-town', 'jacarandas');
-    map.moveLayer('place-village', 'jacarandas');
-
-    map.addControl(new mapboxgl.NavigationControl());
-
-    map.getContainer().appendChild(document.getElementById('legend'));
-
-    geocoder.on('result', function(ev) {
-        if (window.marker) {
-            window.marker.remove();
-        }
-        window.marker = new mapboxgl.Marker({
-            color: "#4b549e",
-            draggable: false
-        })
-        .setLngLat(ev.result.geometry.coordinates)
-        .setPopup(new mapboxgl.Popup().setHTML(`<h4>${ev.result.place_name}</h4>`))
-        .addTo(map);
-    });
+geocoder.on('result', function(ev) {
+    if (window.marker) {
+        window.marker.remove();
+    }
+    window.marker = new mapboxgl.Marker({
+        color: "#4b549e",
+        draggable: false
+    })
+    .setLngLat(ev.result.geometry.coordinates)
+    .setPopup(new mapboxgl.Popup().setHTML(`<h4>${ev.result.place_name}</h4>`))
+    .addTo(map);
 });
