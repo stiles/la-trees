@@ -23,8 +23,9 @@ body, html {
     background-color: #e4e6f3;
     text-align: center;
     font-family: 'Source Sans 3', sans-serif;
-    color: #666;
-    font-size: 17px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 400;
     border-top: 1px solid #4b549e;
 }
 
@@ -58,8 +59,10 @@ h1, h2, h3 {
 
 .intro {
     font-family: "Source Sans 3", sans-serif;
-    color: #777;
-    font-size: .8em;
+    color: #555;
+    font-size: .95em;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 .animate {
@@ -129,15 +132,17 @@ p {
     border: 1px solid #ccc;
     font-family: "Source Sans 3", sans-serif;
     font-size: 14px;
+    font-weight: 400;
+    color: #555;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
 }
 
 .mapboxgl-ctrl-geocoder--input, .location-selector {
-    width: 100%;  /* Ensures inputs stretch to fill their containers */
-    box-sizing: border-box;  /* Includes padding and border in width and height */
+    width: 100%;
+    box-sizing: border-box;
     font-family: "Source Sans 3", sans-serif;
-    color: #777;
-    
+    font-weight: 400;
+    color: #555;
 }
 
 @media screen and (min-width: 640px) {

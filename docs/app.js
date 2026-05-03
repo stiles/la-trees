@@ -172,10 +172,20 @@ map.on('load', function () {
     document.head.appendChild(style);
 
     // Move place labels above jacarandas layer
-    // Note: moveLayer(id, beforeId) moves 'id' to be just before 'beforeId'
-    // So we need to move jacarandas below the labels instead
-    if (map.getLayer('place-city-lg-n')) {
-        map.moveLayer('jacarandas', 'place-city-lg-n');
+    // Find the earliest place label layer and move jacarandas before it
+    const layers = map.getStyle().layers;
+    const placeLayers = ['place-city-lg-n', 'place-city-md-n', 'place-suburb', 'place-town', 'place-village'];
+    let firstPlaceLayer;
+    
+    for (let i = 0; i < layers.length; i++) {
+        if (placeLayers.includes(layers[i].id)) {
+            firstPlaceLayer = layers[i].id;
+            break;
+        }
+    }
+    
+    if (firstPlaceLayer) {
+        map.moveLayer('jacarandas', firstPlaceLayer);
     }
 
     map.addControl(new mapboxgl.NavigationControl());
