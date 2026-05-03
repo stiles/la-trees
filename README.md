@@ -89,7 +89,7 @@ The City of Los Angeles uses [TreeKeeper](https://www.davey.com/consulting/urban
 
 The script downloads data in 5,000-feature chunks, transforms coordinates from California State Plane Zone V to standard latitude/longitude and then exports the results to multiple formats including GeoJSON, zipped Shapefile and zipped File Geodatabase. All the files are uploaded to S3. This method bypasses the gnarly authentication and rate-limiting issues when dealing with TreeKeeper's internal APIs.
 
-Download from S3 (current as of June 6, 2025): [Shapefile](https://stilesdata.com/trees/los-angeles/la_street_trees_shp.zip), [GeoJSON](https://stilesdata.com/trees/los-angeles/la_street_trees_latlon.geojson), [GDB](la_street_trees_gdb.zip).
+Download from S3 (current as of May 3, 2026): [Shapefile](https://stilesdata.com/trees/los-angeles/la_street_trees_shp.zip), [GeoJSON](https://stilesdata.com/trees/los-angeles/la_street_trees_latlon.geojson), [GDB](la_street_trees_gdb.zip).
 
 ## Etc.
 
@@ -100,6 +100,7 @@ Numerous other cities in LA County store their tree inventories in Esri services
 - [Santa Monica](https://gis.santamonica.gov/server/rest/services/Trees/FeatureServer/0/)
 - [Long Beach](https://data.longbeach.gov/explore/dataset/tree-inventory/table/?flg=en-us&sort=species)
 - [Unincorportated LA County](https://lacounty.maps.arcgis.com/home/item.html?id=b61715f22a944b27baa8a53d0621098e)
+- [Maring del Rey (managed by LA County Beaches & Harbors)](https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Marina_del_Rey_Trees_Managed_by_LA_County_Beaches_and_Harbors_/FeatureServer/0)
 
 And researchers have posted other potentially fruitful repos:
 
